@@ -1,3 +1,6 @@
+$debug-box-background: rgba(195, 104, 255, 0.5);
+$debug-box-with-text-background: rgba(77, 94, 255, 0.5);
+
 .blog-title {
   background-color: rgba(222, 222, 222, .5);
   padding: .3rem 0 1rem 1rem;
@@ -9,6 +12,17 @@
   top: 3rem;
 }
 
+.debug-show-box {
+  background-color: $debug-box-background;
+}
+
+.debug-show-box-text {
+  background-color: $debug-box-with-text-background;
+}
+
+.article-item {
+  padding-bottom: 1rem;
+}
 
 .sidemenu {
   margin-top: 15%;

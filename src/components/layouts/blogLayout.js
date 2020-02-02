@@ -1,11 +1,7 @@
-import React from 'react'
-import '../../styles/blogLayout.scss'
-
-// const ListLink = props => (
-//   <li style={{ display: `inline-block`, marginRight: `1rem` }}>
-//     <Link to={props.to}>{props.children}</Link>
-//   </li>
-// )
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
+import '../../styles/blogLayout.scss';
 
 const SideMenu = props => (
   <div class="menu sticky">
@@ -14,7 +10,7 @@ const SideMenu = props => (
     </p>
     <ul id="menu" class="menu-list">
       <li>
-        <a href="#basic">Home</a>
+        <a href="#basic"><FontAwesomeIcon icon={faHome}></FontAwesomeIcon> Home</a>
       </li>
       <li>
         <a href="#keyword">Categories</a>
