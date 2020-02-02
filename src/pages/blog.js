@@ -1,39 +1,73 @@
-import React from 'react'
-import BlogLayout from '../components/layouts/blogLayout.js'
-import BlogIcon from '../components/utils/iconGenerator'
+import Identicon from 'identicon.js';
+import React from 'react';
+import BlogLayout from '../components/layouts/blogLayout.js';
 
-const Item = () => (
-  <>
-    <div className="columns article-item">
-      <div className="column is-narrow is-vcentered is-hidden-mobile ">
-        <BlogIcon
-          hashMatrix={[
-            [1, 2, 3],
-            [4, 5, 6],
-            [7, 8, 9],
-          ]}
-        ></BlogIcon>
-        {/* <FontAwesomeIcon icon={faBraille}></FontAwesomeIcon> */}
-      </div>
-      <div className="column ">
-        <h1 className="title">
-          Hi! I'm building a fake Gatsby site as part of a tutorial!
-        </h1>
-        <h2 className="subtitle">
-          What do I like to do? Lots of course but definitely enjoy building
-          websites.
-        </h2>
-      </div>
-    </div>
-  </>
-)
+const Item = props => {
+  const options = {
+    foreground: [129, 127, 127, 255], // rgba black
+    background: [255, 255, 255, 255], // rgba white
+    format: 'svg',
+  };
+  const titleNameForHash =
+    props.title.length >= 15
+      ? props.title
+      : `askm897907asmlkdmsa${props.title}lskgyamw73m56xas`;
 
-export default () => (
-  <BlogLayout>
-    {Array(10)
-      .fill(1)
-      .map(() => (
-        <Item></Item>
+  console.log(titleNameForHash);
+
+  const data = new Identicon(titleNameForHash, options).toString();
+
+  return (
+    <>
+      <div className="columns article-item">
+        <div className="column is-narrow is-vcentered is-hidden-mobile article-icon ">
+          <img src={'data:image/svg+xml;base64,' + data}></img>
+        </div>
+        <div className="column ">
+          <h1 className="title">{props.title}</h1>
+          <h2 className="subtitle">{props.subtitle}</h2>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default () => {
+  const articles = [
+    {
+      title: 'Hello cunt',
+      subtitle: 'im here to teach how to code, bitch',
+    },
+    {
+      title: 'Hello bitch',
+      subtitle: 'im here to teach how to code, bitch',
+    },
+    {
+      title: 'Hello alfkhsdafmfsd',
+      subtitle: 'im here to teach how to code, bitch',
+    },
+    {
+      title: 'Hello loremsdfn,smdanf',
+      subtitle: 'im here to teach how to code, bitch',
+    },
+    {
+      title: 'asss cunt',
+      subtitle: 'im here to teach how to code, bitch',
+    },
+    {
+      title: 'asd;kasfpoj cunt',
+      subtitle: 'im here to teach how to code, bitch',
+    },
+    {
+      title: 'Hello cunasdasdt',
+      subtitle: 'im here to teach how to code, bitch',
+    },
+  ];
+  return (
+    <BlogLayout>
+      {articles.map(article => (
+        <Item title={article.title} subtitle={article.subtitle}></Item>
       ))}
-  </BlogLayout>
-)
+    </BlogLayout>
+  );
+};

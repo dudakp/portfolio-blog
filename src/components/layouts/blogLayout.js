@@ -1,4 +1,4 @@
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faBoxes, faChild, faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import '../../styles/blogLayout.scss';
@@ -8,19 +8,37 @@ const SideMenu = props => (
     <p class="menu-label">
       <b>Underrected</b>
     </p>
-    <ul id="menu" class="menu-list">
+    <ul class="menu-list">
       <li>
-        <a href="#basic"><FontAwesomeIcon icon={faHome}></FontAwesomeIcon> Home</a>
+        <a>
+          <FontAwesomeIcon
+            icon={faHome}
+            className="menu-icon"
+          ></FontAwesomeIcon>{' '}
+          Home
+        </a>
       </li>
       <li>
-        <a href="#keyword">Categories</a>
+        <a>
+          <FontAwesomeIcon
+            icon={faBoxes}
+            className="menu-icon"
+          ></FontAwesomeIcon>
+          Categories
+        </a>
       </li>
       <li>
-        <a href="#onpage">About</a>
+        <a>
+          <FontAwesomeIcon
+            icon={faChild}
+            className="menu-icon"
+          ></FontAwesomeIcon>{' '}
+          Home About
+        </a>
       </li>
     </ul>
   </div>
-)
+);
 
 export default ({ children }) => (
   <div className="container">
@@ -32,9 +50,11 @@ export default ({ children }) => (
     </div>
     <hr></hr>
     <div className="columns">
-      <div class="column"><SideMenu></SideMenu></div>
+      <div class="column">
+        <SideMenu></SideMenu>
+      </div>
       <div className="column is-half"> {children} </div>
       <div className="column"></div>
     </div>
   </div>
-)
+);
