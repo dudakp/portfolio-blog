@@ -1,25 +1,25 @@
 $debug-box-background: rgba(195, 104, 255, 0.5);
 $debug-box-with-text-background: rgba(77, 94, 255, 0.5);
 
-.blog-title {
-  background-color: rgba(222, 222, 222, .5);
-  padding: .3rem 0 1rem 1rem;
-  margin: 0 0 3rem 0;
-}
-
 .menu-icon {
-  
-    margin-right: .7rem;
-  
+  margin-right: 0.7rem;
 }
 
 .article-icon {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
+}
+
+.menu-list {
+  text-shadow: 6px 6px 15px rgba(104, 104, 104, 0.25);
 }
 
 .sticky {
   position: sticky;
   top: 3rem;
+}
+
+.article-item {
+  padding-bottom: 1rem;
 }
 
 .debug-show-box {
@@ -28,36 +28,4 @@ $debug-box-with-text-background: rgba(77, 94, 255, 0.5);
 
 .debug-show-box-text {
   background-color: $debug-box-with-text-background;
-}
-
-.article-item {
-  padding-bottom: 1rem;
-}
-
-.sidemenu {
-  margin-top: 15%;
-  height: auto;
-  font-size: 1.45rem;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  background-color: rgba(222, 222, 222, 0.47);
-  overflow-x: hidden;
-
-  a {
-    div {
-      width: 100%;
-      height: 100%;
-      margin-bottom: 1rem;
-    }
-    .home {
-      background-color: #dedede;
-    }
-    margin: 0 0 0 0;
-    color: #818181;
-    display: block;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    background-image: none;
-  }
 }
