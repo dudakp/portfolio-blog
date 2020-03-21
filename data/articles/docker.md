@@ -1,5 +1,5 @@
 ---
-path: "/blog/docker"
+path: "/docker"
 date: "21-03-2020"
 title: "Docker"
 category: "DevOps"

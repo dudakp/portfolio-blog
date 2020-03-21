@@ -1,5 +1,5 @@
 ---
-path: "/blog/about"
+path: "/about"
 date: "21-03-2020"
 title: "About"
 category: "about"

@@ -9,7 +9,7 @@ export default ({ items }) => {
     <div className="menu sticky">
       <ul className="menu-list">
         <li>
-          <Link to="/blog" state={{ category: 'all' }}>
+          <Link to="/" state={{ category: 'all' }}>
             <FontAwesomeIcon
               icon={faHome}
               className="menu-icon"
@@ -18,7 +18,7 @@ export default ({ items }) => {
           </Link>
         </li>
         <li>
-          <Link to={'/blog'} state={{ category: 'all' }}>
+          <Link to={'/'} state={{ category: 'all' }}>
             <FontAwesomeIcon
               icon={faBoxes}
               className="menu-icon"
@@ -27,24 +27,24 @@ export default ({ items }) => {
           </Link>
           <ul>
             <li>
-              <Link to={'/blog'} state={{ category: 'general' }}>
+              <Link to={'/'} state={{ category: 'general' }}>
                 General
               </Link>
             </li>
             <li>
-              <Link to={'/blog'} state={{ category: '1W1T' }}>
+              <Link to={'/'} state={{ category: '1W1T' }}>
                 1 week 1 technology
               </Link>
             </li>
             <li>
-              <Link to={'/blog'} state={{ category: 'DevOps' }}>
+              <Link to={'/'} state={{ category: 'DevOps' }}>
                 DevOps series
               </Link>
             </li>
           </ul>
         </li>
         <li>
-          <Link to="/blog/about">
+          <Link to="/about">
             <FontAwesomeIcon
               icon={faChild}
               className="menu-icon"

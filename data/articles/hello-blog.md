@@ -1,5 +1,5 @@
 ---
-path: '/blog/hello-blog'
+path: '/hello-blog'
 date: '21-03-2020'
 title: 'console.log(‘Hello blog!’);'
 desc: 'First article'
