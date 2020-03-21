@@ -1,0 +1,46 @@
+$neu-shadow: 6px 6px 15px rgba(104, 104, 104, 0.25);
+
+.landingBackround {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  background-color: #e9e9e9;
+  background-image: url(../images/neu-shapes.svg);
+  background-repeat: no-repeat;
+  background-position: 0% 25%;
+  background-size: 75%;
+}
+
+#landingMenu {
+  position: absolute;
+  top: 25%;
+  right: 0;
+}
+
+#name {
+  margin-top: 4.25rem;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 5rem;
+  line-height: 110px;
+  color: #000000;
+
+  /* neu-shadow */
+  text-shadow: $neu-shadow;
+}
+
+#workTitle {
+  margin-left: 18rem;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 3rem;
+  color: #000000;
+
+  /* neu-shadow */
+  text-shadow: $neu-shadow;
+}

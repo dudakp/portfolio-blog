@@ -1,0 +1,13 @@
+@import '~bulma/bulma.sass';
+
+h1 {
+  @extend .title;
+}
+
+h2 {
+  @extend .subtitle;
+}
+
+a {
+  word-wrap: break-word;
+}
