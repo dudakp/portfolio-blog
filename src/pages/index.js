@@ -14,7 +14,7 @@ export default ({
       {edges
         .filter(edge => edge.node.frontmatter.category != 'about')
         .filter(edge =>
-          location.state?.category == 'all'
+          location.state?.category == undefined
             ? true
             : edge.node.frontmatter.category === location.state?.category
         )
