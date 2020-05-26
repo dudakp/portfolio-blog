@@ -8,7 +8,6 @@ export default ({
   },
   location,
 }) => {
-  console.log(location.state);
   return (
     <BlogLayout>
       {edges
@@ -16,9 +15,14 @@ export default ({
         .filter(edge =>
           location.state?.category == undefined
             ? true
-            : edge.node.frontmatter.category === location.state?.category
+            : edge.node.frontmatter.category.toLowerCase() ===
+              location.state?.category.toLowerCase()
         )
-        .filter(edge => edge.node.frontmatter.published)
+        .filter(edge =>
+          process.env.NODE_ENV === 'development'
+            ? true
+            : edge.node.frontmatter.published
+        )
         .map(edge => (
           <ArticleItem
             title={edge.node.frontmatter.title}

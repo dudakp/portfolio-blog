@@ -14,6 +14,12 @@ $debug-box-with-text-background: rgba(77, 94, 255, 0.5);
   margin-right: .75rem;
 }
 
+.title-blog {
+  .is-desktop {
+    font-size: 4rem;
+  }
+}
+
 .menu-list {
   text-shadow: 6px 6px 15px rgba(104, 104, 104, 0.25);
 }
@@ -33,4 +39,18 @@ $debug-box-with-text-background: rgba(77, 94, 255, 0.5);
 
 .debug-show-box-text {
   background-color: $debug-box-with-text-background;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 3rem;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: white;
+  color: rgba(73, 73, 73, 0.459);
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: .7rem;  
 }

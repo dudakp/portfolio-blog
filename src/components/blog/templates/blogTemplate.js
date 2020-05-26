@@ -2,9 +2,10 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import '../../../styles/blogTemplate.scss';
 import BlogLayout from '../../layouts/BlogLayout';
+import CommentSection from '../../CommentSection';
 
-export default function Template({ data }) {
-  const { markdownRemark } = data; // data.markdownRemark holds your post data
+export default ({ data }) => {
+  const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
   return (
     <BlogLayout>
@@ -18,6 +19,7 @@ export default function Template({ data }) {
           />
         </div>
       </div>
+      <CommentSection></CommentSection>
     </BlogLayout>
   );
 }

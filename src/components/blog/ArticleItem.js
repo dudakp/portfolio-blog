@@ -9,8 +9,14 @@ export default ({ title, date, desc, category, readingTime, path }) => {
     background: [255, 255, 255, 255],
     format: 'svg',
   };
-  const titleNameForHash =
-    title.length >= 15 ? title : `askm897907asmlkdmsa${title}lskgyamw73m56xas`;
+
+  const hashCode = s => {
+    for (var i = 0, h = 0; i < s.length; i++)
+      h = (Math.imul(31, h) + s.charCodeAt(i)) | 0;
+    return h;
+  };
+    
+  const titleNameForHash = `asd908asd${hashCode(title)}1209sda98`;
 
   const identiconData = new Identicon(titleNameForHash, options).toString();
 
@@ -21,17 +27,17 @@ export default ({ title, date, desc, category, readingTime, path }) => {
       </div>
       <div className="column">
         <Link to={path}>
-          <h1 className="title">{title}</h1>
+          <h1 className="title is-3 article-title">{title}</h1>
         </Link>
         <div className="columns is-gapless is-marginless">
           <div className="column is-narrow">
-            <h2> {category} |</h2>
+            <h2 className="subtitle"> {category} |</h2>
           </div>
           <div className="column is-narrow">
-            <h2> {date} |</h2>
+            <h2 className="subtitle"> {date} |</h2>
           </div>
           <div className="column is-narrow">
-            <h2> {readingTime} min read</h2>
+            <h2 className="subtitle"> {readingTime} min read</h2>
           </div>
         </div>
         <div className="columns">
