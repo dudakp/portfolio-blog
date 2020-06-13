@@ -3,7 +3,7 @@ path: '/gatsby'
 date: '22-03-2020'
 title: 'Gatsby (how I made this blog)'
 category: 'General'
-published: False
+published: True
 ---
 
 In the process of how to make this project I've considered two possibilities:
