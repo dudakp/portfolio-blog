@@ -12,6 +12,11 @@ $debug-box-with-text-background: rgba(77, 94, 255, 0.5);
 .article-body {
   margin-left: .75rem;
   margin-right: .75rem;
+  margin-bottom: 7rem;
+}
+
+.title-link {
+  color: rgb(74, 74, 74);
 }
 
 .title-blog {
@@ -53,4 +58,14 @@ $debug-box-with-text-background: rgba(77, 94, 255, 0.5);
   cursor: pointer;
   padding: 1rem;
   border-radius: .7rem;  
+}
+
+.blog-content {
+  margin-left: .7rem;
+  margin-right: .7rem;
+}
+
+hr {
+  background-color:rgba(73, 73, 73, 0.17);
+  // height: 1px;
 }

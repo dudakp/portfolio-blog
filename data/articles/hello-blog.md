@@ -3,6 +3,10 @@ path: '/hello-blog'
 date: '21-03-2020'
 title: 'console.log(‘Hello blog!’);'
 desc: 'First article'
+tags: 
+    - hello
+    - yess
+    - first
 category: 'general'
 published: True
 ---

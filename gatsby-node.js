@@ -4,11 +4,12 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const path = require(`path`);
+const path = require('path');
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const blogPostTemplate = path.resolve(
-    `src/components/blog/templates/blogTemplate.js`
+    'src/components/blog/templates/blogTemplate.js',
   );
   const result = await graphql(`
     {
@@ -29,7 +30,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   `);
   // Handle errors
   if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`);
+    reporter.panicOnBuild('Error while running GraphQL query.');
     return;
   }
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {

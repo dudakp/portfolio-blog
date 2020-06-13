@@ -2,8 +2,9 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import '../../../styles/blogTemplate.scss';
 import BlogLayout from '../../layouts/BlogLayout';
-import CommentSection from '../../CommentSection';
+import CommentSection from '../CommentSection';
 
+/* eslint-disable  react/prop-types */
 export default ({ data }) => {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
@@ -19,21 +20,21 @@ export default ({ data }) => {
           />
         </div>
       </div>
-      <CommentSection></CommentSection>
+      {/* <CommentSection /> */}
     </BlogLayout>
   );
-}
+};
 
 export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
-      frontmatter {
-        date
-        path
-        title
-        category
-      }
+    query($path: String!) {
+        markdownRemark(frontmatter: { path: { eq: $path } }) {
+            html
+            frontmatter {
+                date
+                path
+                title
+                category
+            }
+        }
     }
-  }
 `;

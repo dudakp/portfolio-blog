@@ -3,7 +3,7 @@ import Identicon from 'identicon.js';
 import React from 'react';
 import '../../styles/articleItem.scss';
 
-export default ({ title, date, desc, category, readingTime, path }) => {
+export default ({ title, date, desc, category, readingTime, path, tags }) => {
   const options = {
     foreground: [129, 127, 127, 255],
     background: [255, 255, 255, 255],
@@ -15,30 +15,33 @@ export default ({ title, date, desc, category, readingTime, path }) => {
       h = (Math.imul(31, h) + s.charCodeAt(i)) | 0;
     return h;
   };
-    
+
   const titleNameForHash = `asd908asd${hashCode(title)}1209sda98`;
 
   const identiconData = new Identicon(titleNameForHash, options).toString();
 
   return (
     <div className="columns article-item">
-      <div className="column is-narrow is-vcentered is-hidden-mobile article-icon ">
-        <img src={'data:image/svg+xml;base64,' + identiconData}></img>
+      <div className="column is-narrow is-hcentered is-hidden-mobile article-icon ">
+        {readingTime ? <img src={'data:image/svg+xml;base64,' + identiconData}></img> : ''}
+
       </div>
       <div className="column">
         <Link to={path}>
-          <h1 className="title is-3 article-title">{title}</h1>
+          <h1 className="title is-2 article-title">{title}</h1>
         </Link>
         <div className="columns is-gapless is-marginless">
           <div className="column is-narrow">
             <h2 className="subtitle"> {category} |</h2>
           </div>
           <div className="column is-narrow">
-            <h2 className="subtitle"> {date} |</h2>
+            <h2 className="subtitle"> {date} </h2>
           </div>
+          {readingTime ? 
           <div className="column is-narrow">
-            <h2 className="subtitle"> {readingTime} min read</h2>
+            <h2 className="subtitle">| {readingTime} min read</h2>
           </div>
+          : <></>}
         </div>
         <div className="columns">
           <div className="column is-gapless">
@@ -46,6 +49,7 @@ export default ({ title, date, desc, category, readingTime, path }) => {
           </div>
         </div>
         <hr className="is-marginless"></hr>
+
       </div>
     </div>
   );
